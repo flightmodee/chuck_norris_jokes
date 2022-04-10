@@ -1,6 +1,4 @@
 package com.example.project
-
-
 /*
     This object will store a hard-coded list of jokes, until we manage to fetch data from the ChuckJokeAPI
  */
