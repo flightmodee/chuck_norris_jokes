@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.project.Joke
 import com.example.project.R
 
 //Our JokeAdapter contains data to pick from: a list of string, here
-class JokeAdapter(val jokeList: List<String>): RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
+class JokeAdapter(val jokeList: List<Joke>): RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
     
     //Our view holder has a TextView as a member.
     class JokeViewHolder(item_view: View) : RecyclerView.ViewHolder(item_view){
@@ -23,7 +24,7 @@ class JokeAdapter(val jokeList: List<String>): RecyclerView.Adapter<JokeAdapter.
 
     //Nothing fancy here: we're binding our TextView to some data.
     override fun onBindViewHolder(holder: JokeViewHolder, position: Int) {
-        holder.text_view.text = jokeList[position]
+        holder.text_view.text = jokeList[position].value
     }
 
     override fun getItemCount(): Int = 10

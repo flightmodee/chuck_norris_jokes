@@ -3,7 +3,6 @@ package com.example.project
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.os.Bundle
-import android.util.Log
 import com.example.project.adapter.JokeAdapter
 
 class MainActivity : AppCompatActivity() {
@@ -12,11 +11,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //displaying each joke on the Logcat
-        JokeList.list.forEach { it ->
-            Log.d(null, it)
+        val adapterList = mutableListOf<Joke>()
+        JokeList.list.forEach { joke ->
+            val j = Joke(value = joke)
+            adapterList.add(j)
         }
-
-        recyclerView.adapter = JokeAdapter(JokeList.list)
+        recyclerView.adapter = JokeAdapter(adapterList)
     }
 }
