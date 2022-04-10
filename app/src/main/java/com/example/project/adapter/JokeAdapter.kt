@@ -13,7 +13,7 @@ class JokeAdapter(val jokeList: List<Joke>): RecyclerView.Adapter<JokeAdapter.Jo
     
     //Our view holder has a TextView as a member.
     class JokeViewHolder(item_view: View) : RecyclerView.ViewHolder(item_view){
-        val text_view:TextView = item_view.findViewById(R.id.joke_textview)
+        val textView:TextView = item_view.findViewById(R.id.joke_textview)
     }
 
     //Inflating joke_layout into a view, and returning a JokeViewHolder that will... hold the TextView associated to it.
@@ -24,7 +24,7 @@ class JokeAdapter(val jokeList: List<Joke>): RecyclerView.Adapter<JokeAdapter.Jo
 
     //Nothing fancy here: we're binding our TextView to some data.
     override fun onBindViewHolder(holder: JokeViewHolder, position: Int) {
-        holder.text_view.text = jokeList[position].value
+        holder.textView.text = jokeList[position].value
     }
 
     override fun getItemCount(): Int = 10
