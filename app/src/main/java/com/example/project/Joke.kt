@@ -10,5 +10,5 @@ data class Joke(
     val id:String="",
     val updatedAt:String="",
     val url:String="",
-    val value:String) {
+    val value:String){
 }
