@@ -9,7 +9,7 @@ import com.example.project.R
 
 //Our JokeAdapter contains data to pick from: a list of string, here
 class JokeAdapter(val jokeList: List<String>): RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
-
+    
     //Our view holder has a TextView as a member.
     class JokeViewHolder(item_view: View) : RecyclerView.ViewHolder(item_view){
         val text_view:TextView = item_view.findViewById(R.id.joke_textview)
