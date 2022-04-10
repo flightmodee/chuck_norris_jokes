@@ -1,5 +1,6 @@
 package com.example.project.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,16 @@ import com.example.project.Joke
 import com.example.project.R
 
 //Our JokeAdapter contains data to pick from: a list of string, here
-class JokeAdapter(val jokeList: List<Joke>): RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
-    
+class JokeAdapter(var jokeList: List<Joke>): RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateList(it: Joke) {
+        jokeList = jokeList + it
+        notifyDataSetChanged()
+    }
+
     //Our view holder has a TextView as a member.
-    class JokeViewHolder(item_view: View) : RecyclerView.ViewHolder(item_view){
+    inner class JokeViewHolder(item_view: View) : RecyclerView.ViewHolder(item_view){
         val textView:TextView = item_view.findViewById(R.id.joke_textview)
     }
 
